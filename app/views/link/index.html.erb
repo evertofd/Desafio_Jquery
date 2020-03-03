@@ -1,0 +1,36 @@
+<div class="container text-center">
+  <h3>DesafioJquery RGB</h3>
+  <div class="">
+    <input id="red" data-width="150" type="text" value="0" data-max="255" class="circulo">
+    <input id="green" data-width="150" type="text" value="0" data-max="255" class="circulo">
+    <input id="blue" data-width="150" type="text" value="0" data-max="255" class="circulo">
+  </div>
+  <div>
+    <div class="d-flex justify-content-center">
+      <div class="row">
+        <div class="col">
+          <div id="text">
+              RGB(0, 0, 0)
+          </div>
+          <div id="colores" style="height: 300px; width: 300px;">
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $(function () {
+    $(".circulo").knob({
+      'change': function () {
+        var result = 'RGB(' + $('#red').val() + ', ' + $('#green').val() + ', ' + $('#blue').val() + ')';
+        $('#colores').css('background-color', result);
+        $('#text').text(result);
+      }
+    });
+  });
+</script>
